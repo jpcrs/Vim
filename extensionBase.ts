@@ -410,6 +410,8 @@ export async function activate(context: vscode.ExtensionContext, handleLocal: bo
     });
   });
 
+  overrideCommand(context, 'compositionType', async () => {return});
+
   overrideCommand(context, 'compositionEnd', async () => {
     taskQueue.enqueueTask(async () => {
       const mh = await getAndUpdateModeHandler();
